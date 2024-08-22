@@ -1,6 +1,6 @@
 <div
   class="pensamento {{ pensamento.modelo }} ff-roboto-mono"
-  ngClass="larguraPensamento()"
+  [ngClass]="larguraPensamento()"
 >
   <img
     src="../../../../assets/Imagens/{{ pensamento.modelo }}.png"
@@ -14,13 +14,17 @@
     <button class="botao-editar">
       <img
         src="../../../../assets/Imagens/icone-editar.png"
-        alt="Íconde de editar"
+        routerLink="/pensamentos/editarPensamento/{{ pensamento.id }}"
+        alt="Ícone de editar"
       />
     </button>
-    <button class="botao-editar">
+    <button
+      class="botao-excluir"
+      routerLink="/pensamentos/excluirPensamento/{{ pensamento.id }}"
+    >
       <img
         src="../../../../assets/Imagens/icone-excluir.png"
-        alt="Íconde de excluir"
+        alt="Ícone de excluir"
       />
     </button>
   </div>
